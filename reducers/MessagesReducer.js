@@ -1,8 +1,7 @@
 import {ACTIONS} from "../actions";
 
 let initialState = {
-    all: {},
-    current: {},
+    all: {}
 }
 
 

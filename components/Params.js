@@ -10,8 +10,6 @@ class Params extends Component {
     constructor(props)
     {
         super(props);
-        console.log(getStatusBarHeight());
-
     }
 
     logout = () => {

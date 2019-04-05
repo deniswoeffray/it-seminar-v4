@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     mainContainer: {
         marginTop: getStatusBarHeight(),
         marginLeft: 15,
-        marginRight: 15
+        marginRight: 15,
     },
     allChannelContainer: {
         marginTop: getStatusBarHeight(),

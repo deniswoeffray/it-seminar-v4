@@ -13,7 +13,7 @@ import {
 
 class AllChannel extends Component {
 
-    state = {
+    initState = {
         message: ""
     }
 
@@ -34,7 +34,7 @@ class AllChannel extends Component {
 
         return (
             <KeyboardAvoidingView style={[styles.allChannelContainer]} behavior="padding" enabled>
-a
+
                 <ScrollView>
                     {this.props.allchannel.all.length > 0 && <List>
                         {this.props.allchannel.all.map((item) => {
