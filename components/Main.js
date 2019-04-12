@@ -1,8 +1,8 @@
 // Main.js
 
 import React from 'react'
-import { StyleSheet, Platform, Button, Text, View } from 'react-native'
-import firebase from 'firebase'
+import { StyleSheet } from 'react-native'
+
 import Params from "./Params";
 import {
     createBottomTabNavigator,

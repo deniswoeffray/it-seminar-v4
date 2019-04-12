@@ -17,13 +17,17 @@ class AllChannel extends Component {
         message: ""
     }
 
+    constructor(props){
+        super(props);
+        this.state=this.initState;
+    }
+
     componentDidMount() {
         this.props.getAllChannel();
-        this.setState(this.state)
     }
 
     send = () => {
-        if (this.state.message != "") {
+        if (this.state.message !== "") {
             this.props.sendMessage(this.state.message);
             this.setState({message: ""});
         }
