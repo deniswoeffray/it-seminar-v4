@@ -30,43 +30,47 @@ export default class SignUp extends React.Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-                <Text>Create new account</Text>
+                <Text style={[styles.verticalSpace1]} >Create new account</Text>
                 {this.state.errorMessage &&
-                <Text style={{ color: 'red' }}>
+                <Text style={[{ color: 'red' }, styles.verticalSpace1]}>
                     {this.state.errorMessage}
                 </Text>}
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     placeholder="Firstname"
                     onChangeText={firstname => this.setState({ firstname })}
                     value={this.state.firstname}
                 />
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     placeholder="Lastname"
                     onChangeText={lastname => this.setState({ lastname })}
                     value={this.state.lastname}
                 />
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     placeholder="Email"
                     autoCapitalize="none"
                     onChangeText={email => this.setState({ email })}
                     value={this.state.email}
                 />
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     secureTextEntry
                     placeholder="Password"
                     autoCapitalize="none"
                     onChangeText={password => this.setState({ password })}
                     value={this.state.password}
                 />
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     secureTextEntry
                     placeholder="Repeat Password"
                     autoCapitalize="none"
                     onChangeText={password2 => this.setState({ password2 })}
                     value={this.state.password2}
                 />
-                <Button style={{marginTop:8,marginBottom:8}} title="Create account" onPress={this.handleSignUp} />
-                <Button
+                <Text style={styles.verticalSpace1}/>
+
+                <Button style={[styles.verticalSpace1]} title="Create account" onPress={this.handleSignUp} />
+                <Text style={styles.verticalSpace1}/>
+
+                <Button style={[styles.verticalSpace1]}
                     title="Already have an account? Login"
                     onPress={() => this.props.navigation.navigate('Login')}
                 />

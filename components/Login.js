@@ -17,26 +17,29 @@ export default class Login extends React.Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-                <Text>Login</Text>
+                <Text style={[styles.verticalSpace1]} >Login</Text>
                 {this.state.errorMessage &&
-                <Text style={{ color: 'red' }}>
+                <Text style={[{ color: 'red' }, styles.verticalSpace1]}>
                     {this.state.errorMessage}
                 </Text>}
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     autoCapitalize="none"
                     placeholder="Email"
                     onChangeText={email => this.setState({ email })}
                     value={this.state.email}
                 />
-                <TextInput
+                <TextInput style={[styles.verticalSpace1]}
                     secureTextEntry
                     autoCapitalize="none"
                     placeholder="Password"
                     onChangeText={password => this.setState({ password })}
                     value={this.state.password}
                 />
-                <Button title="Login" onPress={this.handleLogin} />
-                <Button
+                <Text style={styles.verticalSpace1}/>
+
+                <Button style={[styles.verticalSpace1]} title="Login" onPress={this.handleLogin} />
+                <Text style={styles.verticalSpace1}/>
+                <Button style={[styles.verticalSpace1]}
                     title="Don't have an account? Sign Up"
                     onPress={() => this.props.navigation.navigate('SignUp')}
                 />

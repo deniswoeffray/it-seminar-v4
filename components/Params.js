@@ -21,8 +21,8 @@ class Params extends Component {
     render() {
         return (
             <ScrollView style={styles.mainContainer}>
-                <Text>My user UID : {firebase.auth().currentUser.uid}</Text>
-                <Button title={"Logout"} onPress={this.logout}/>
+                <Text style={styles.verticalSpace1}>My user UID : {firebase.auth().currentUser.uid}</Text>
+                <Button style={styles.verticalSpace1} title={"Logout"} onPress={this.logout}/>
             </ScrollView>
         )
     }

@@ -1,7 +1,11 @@
 import {ACTIONS} from '../actions';
-import { messages, auth, users } from "../config/firebase";
-import * as firebase from "../config/firebase";
+import * as firebase from "firebase";
 
+const databaseRef = firebase.database().ref();
+
+export const messages = databaseRef.child("messages");
+export const users = databaseRef.child("users");
+export const auth = firebase.auth();
 
 export const getAllChannel = () => async dispatch => {
     messages.child("all").orderByChild("timestamp").on("value", snapshot => {

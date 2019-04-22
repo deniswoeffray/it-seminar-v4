@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, ScrollView, TextInput, View,KeyboardAvoidingView} from 'react-native';
+import {Button, ScrollView, TextInput, View, KeyboardAvoidingView} from 'react-native';
 import {connect} from 'react-redux';
 import {List, ListItem} from 'native-base';
 import {styles} from './../Style';
@@ -9,6 +9,8 @@ import {bindActionCreators} from "redux";
 import {
     getAllChannel, sendMessage
 } from "../actions/MessagesActions";
+import moment from "moment";
+import Message from "./Message";
 
 
 class AllChannel extends Component {
@@ -17,9 +19,9 @@ class AllChannel extends Component {
         message: ""
     }
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state=this.initState;
+        this.state = this.initState;
     }
 
     componentDidMount() {
@@ -31,32 +33,28 @@ class AllChannel extends Component {
             this.props.sendMessage(this.state.message);
             this.setState({message: ""});
         }
-    }
+    };
 
     render() {
-
-
         return (
             <KeyboardAvoidingView style={[styles.allChannelContainer]} behavior="padding" enabled>
-
-                <ScrollView>
-                    {this.props.allchannel.all.length > 0 && <List>
+                <ScrollView style={[styles.m0]}>
+                    {this.props.allchannel.all.length > 0 &&
+                    <List style={[styles.m1]}>
                         {this.props.allchannel.all.map((item) => {
                             return (
-                                <ListItem key={item.key}>
-                                    <Text>{item.message}</Text>
-                                </ListItem>
+                                <Message item={item}/>
                             )
                         })
                         }
                     </List>}
                     {(!this.props.allchannel.all || this.props.allchannel.all.length === 0) && <Text>No messages</Text>}
                 </ScrollView>
-                <View style={styles.messageView}>
+                <View style={[styles.messageView, styles.p1]}>
                     <TextInput style={{flex: 1}}
-                        placeholder="Message..."
-                        onChangeText={message => this.setState({message})}
-                        value={this.state.message}
+                               placeholder="Message..."
+                               onChangeText={message => this.setState({message})}
+                               value={this.state.message}
                     />
                     <Button style={{flex: 1}} title={"Send"} onPress={this.send}/>
                 </View>
